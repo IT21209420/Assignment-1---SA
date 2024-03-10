@@ -1,6 +1,11 @@
 package com.airport.baggageeventpublisher;
 
 public class Baggage {
+	@Override
+	public String toString() {
+		return "Baggage [BaggageID=" + BaggageID + ", PassengerID=" + PassengerID + ", FlightNUmber=" + FlightNUmber
+				+ ", Weight=" + Weight + ", Status=" + Status + "]";
+	}
 	private int BaggageID;
 	private int PassengerID;
 	private int FlightNUmber;
