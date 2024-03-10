@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FlightEventSubcriber
+Bundle-SymbolicName: com.airport.FlightEventSubcriber
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.airport.flighteventsubcriber.ServiceActivator
+Bundle-Vendor: AIRPORT
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: com.airport.FlightEventSubcriber
+Import-Package: com.airport.newflighteventpublisher,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
