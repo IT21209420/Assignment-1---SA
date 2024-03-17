@@ -11,14 +11,14 @@ public class ServiceActivator implements BundleActivator {
 
 	
 	public void start(BundleContext context) throws Exception {
-		
+		System.out.println("Baggage Event Service Publisher Start");		
 		BaggageServicePublish publisherService = new BaggageServicePublishImpl();
 		publicServiceRegistration = context. registerService(
 	    BaggageServicePublish.class.getName(), publisherService, null);
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Baggage Checkin Service Publisher Stop");
+		System.out.println("Baggage Event Service Publisher Stop");
 		publicServiceRegistration.unregister();
 	}
 

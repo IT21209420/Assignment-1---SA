@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jdbc
+Bundle-SymbolicName: com.mysql.jdbc
+Bundle-Version: 1.0.0
+Export-Package: com.mysql.cj.jdbc
+Bundle-ClassPath: .
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: com.mysql.jdbc

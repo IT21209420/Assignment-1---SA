@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EmployeeEventPublisher
+Bundle-SymbolicName: com.airport.EmployeeEventPublisher
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.airport.employeeeventpublisher
+Bundle-Activator: com.airport.employeeeventpublisher.ServiceActivator
+Bundle-Vendor: AIRPORT
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: com.airport.EmployeeEventPublisher
+Import-Package: com.airport.databasePublisher,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy

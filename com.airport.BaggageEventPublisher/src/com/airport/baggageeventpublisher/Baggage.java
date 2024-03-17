@@ -3,14 +3,15 @@ package com.airport.baggageeventpublisher;
 public class Baggage {
 	@Override
 	public String toString() {
-		return "Baggage [BaggageID=" + BaggageID + ", PassengerID=" + PassengerID + ", FlightNUmber=" + FlightNUmber
+		return "Baggage [BaggageID=" + BaggageID + ", PassengerID=" + PassengerID + ", FlightNUmber=" + FlightNumber
 				+ ", Weight=" + Weight + ", Status=" + Status + "]";
 	}
 	private int BaggageID;
 	private int PassengerID;
-	private int FlightNUmber;
-	private float Weight;
+	private int FlightNumber;
+	private double Weight;
 	private String Status;
+	
 	public int getBaggageID() {
 		return BaggageID;
 	}
@@ -23,16 +24,16 @@ public class Baggage {
 	public void setPassengerID(int passengerID) {
 		PassengerID = passengerID;
 	}
-	public int getFlightNUmber() {
-		return FlightNUmber;
+	public int getFlightNumber() {
+		return FlightNumber;
 	}
 	public void setFlightNUmber(int flightNUmber) {
-		FlightNUmber = flightNUmber;
+		FlightNumber = flightNUmber;
 	}
-	public float getWeight() {
+	public double getWeight() {
 		return Weight;
 	}
-	public void setWeight(float weight) {
+	public void setWeight(double weight) {
 		Weight = weight;
 	}
 	public String getStatus() {

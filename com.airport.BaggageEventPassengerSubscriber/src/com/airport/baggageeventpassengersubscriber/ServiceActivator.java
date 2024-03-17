@@ -12,7 +12,7 @@ public class ServiceActivator implements BundleActivator {
 	ServiceReference serviceReference;
 
 	public void start(BundleContext context) throws Exception {
-		
+		System.out.println("Baggage Event Passenger Subscriber Started!");
 		serviceReference = context.getServiceReference(BaggageServicePublish.class.getName());
 		BaggageServicePublish baggageCheckinServicePublish = (BaggageServicePublish) context.getService (serviceReference) ;
 		
@@ -20,7 +20,7 @@ public class ServiceActivator implements BundleActivator {
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Good Bye !!!");
+		System.out.println("Baggage Event Passenger Subscriber Stopped!");
 		context.ungetService(serviceReference);
 		
 	}
@@ -30,7 +30,7 @@ public class ServiceActivator implements BundleActivator {
 
 	    Scanner scn = new Scanner(System.in);
 	    System.out.println("\n\n");
-	    System.out.println("---------- Baggage Management  - Passenegr ----------");
+	    System.out.println("---------- Baggage Management  - Passeneger ----------");
 	    System.out.println("1  - Get Baggage Details By Passenger ID");
 	    System.out.println("2  - Get Status of a Baggage");
 	    System.out.println("3  - Inform Missing Baggage");
@@ -104,8 +104,8 @@ public class ServiceActivator implements BundleActivator {
 	           
 	            case 4:
 	                System.out.println("Exited From the program.");
-	                System.exit(0);
-	                break;
+	                return;
+	                
 	            default:
 	                System.out.println("Incorrect Input. Please Enter Valid Number...");
 	                displayMenu(baggageCheckinServicePublish);

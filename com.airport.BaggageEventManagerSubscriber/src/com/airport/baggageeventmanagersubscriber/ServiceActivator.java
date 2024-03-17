@@ -14,15 +14,15 @@ public class ServiceActivator implements BundleActivator {
 	ServiceReference serviceReference;
 
 	public void start(BundleContext context) throws Exception {
-		
+		System.out.println("Baggage Event Manager Subscriber Started!");
 		serviceReference = context.getServiceReference(BaggageServicePublish.class.getName());
-		BaggageServicePublish baggageCheckinServicePublish = (BaggageServicePublish) context.getService (serviceReference) ;
-		
+		BaggageServicePublish baggageCheckinServicePublish = (BaggageServicePublish) context.getService (serviceReference) ;		
 		displayMenu(baggageCheckinServicePublish);
+		
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Good Bye !!!");
+		System.out.println("Baggage Event Manager Subscriber Stopped!");
 		context.ungetService(serviceReference);
 		
 	}
@@ -151,20 +151,13 @@ public class ServiceActivator implements BundleActivator {
 	                }
 	                
 	                
-	                    while (loopThrough.equals("y")) {
-	                        System.out.print("\n\nDo you want to Update Another Baggage Status (y/n) ? ");
-	                        loopThrough = scn.nextLine().trim();
-	                        if (loopThrough.equals("y")) {
-	                            baggageCheckinServicePublish.updateBaggageStatusDetails();
-	                        }
-	                    }
 	               
 	                displayMenu(baggageCheckinServicePublish);
 	                break;
 	            case 7:
 	            	System.out.println("Exited From the program.");
-	            	System.exit(0);
-	            	break;
+	            	return;
+	            	
 	            default:
 	                System.out.println("Incorrect Input. Please Enter Valid Number...");
 	                displayMenu(baggageCheckinServicePublish);

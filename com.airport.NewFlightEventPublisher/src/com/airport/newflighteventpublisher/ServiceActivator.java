@@ -8,20 +8,19 @@ import org.osgi.framework.ServiceRegistration;
 public class ServiceActivator implements BundleActivator {
 
 	
-	ServiceRegistration publicServiceRegistration;
+	private ServiceRegistration publicServiceRegistration;
 
 	
 	public void start(BundleContext context) throws Exception {
-		System.out.println("Baggage Checkin Service Publisher Start");
+		System.out.println("Flight Event Management Service Publisher Start and Running!");
 		NewFlightEventPublish publisherService = new NewFlightEventPublishImpl();
 		publicServiceRegistration = context.registerService(
 		NewFlightEventPublish.class.getName(), publisherService, null);
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Baggage Checkin Service Publisher Stop");
+		System.out.println("Flight Event Management Service Publisher Stop!");
 		publicServiceRegistration.unregister();
 	}
 
 }
-
